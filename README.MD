@@ -1,7 +1,7 @@
 ## Installation
 
 ```bash
-npm i js-logger
+npm i logger-js
 ```
 
 
