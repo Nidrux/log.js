@@ -1,3 +1,12 @@
+# Log.js
+
+<img src="https://img.shields.io/bundlephobia/min/@nidrux/log.js">
+<img src="https://img.shields.io/github/v/release/Nidrux/log.js">
+<img src="https://img.shields.io/github/license/Nidrux/log.js">
+<img src="https://img.shields.io/snyk/vulnerabilities/github/Nidrux/log.js">
+
+
+
 ## Installation
 
 ```bash
