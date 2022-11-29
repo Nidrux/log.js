@@ -1,7 +1,7 @@
 ## Installation
 
 ```bash
-npm i logger-js
+npm i @nidrux/log.js
 ```
 
 
