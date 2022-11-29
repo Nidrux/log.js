@@ -1,0 +1,15 @@
+{
+  "name": "js-logger",
+  "version": "1.0.0",
+  "description": "An advanced logger for your javascript projects. Webhook support",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.4",
+    "node-fetch": "^2.6.7"
+  }
+}
