@@ -4,7 +4,8 @@
   "description": "An advanced logger for your javascript projects. Webhook support",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "jsdoc --configure .jsdoc.json --verbose"
   },
   "author": "Nidrux",
   "license": "MIT",
@@ -12,13 +13,20 @@
     "moment": "^2.29.4",
     "node-fetch": "^2.6.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jsdoc": "^4.0.0",
+    "taffydb": "^2.7.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Nidrux/log.js.git"
   },
   "keywords": [
-    "logging", "logs", "webhooks", "webhook", "custom"
+    "logging",
+    "logs",
+    "webhooks",
+    "webhook",
+    "custom"
   ],
   "bugs": {
     "url": "https://github.com/Nidrux/log.js/issues"

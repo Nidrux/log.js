@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>index.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-Listify-link"><a href="https://listify.games" width="100%" style="display: flex; justify-content: center;"><img src="https://i.imgur.com/iOcQUWe.png" width="30%" height="auto"></a></li><li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="LoggingManager.html">LoggingManager</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="LoggingManager.html#Log">Log</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">index.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const moment = require("moment");
+const { hooks } = require("./controllers/hooks");
+const { terminal } = require("./controllers/terminal");
+class LoggingManager {
+    config;
+    dateFormat;
+    #colors = {
+        red: "\u001b[31m",
+        gold: "\u001b[33m",
+        brightRed: "\u001b[31;1m",
+        reset: "\u001b[0m"
+    };
+    #levels = {
+        warn: "WARN",
+        error: "ERROR",
+        info: "INFO",
+        fatal: "FATAL",
+    } ;
+    /**
+     * 
+     * @param {Object} inConfig 
+     */
+    constructor(inConfig) {
+        if(inConfig) {
+            this.config = inConfig
+        } else {
+            this.config = {
+                enableColors: false,
+            }
+        }
+    }
+    /**
+     * @param {string} level
+     * @param {string} message    
+     */
+    Log(level, message) {
+        if(this.config.dateFormatting) {
+            this.dateFormat = moment(Date.now()).format(this.config.dateFormatting);
+        } else {
+            this.dateFormat = moment(Date.now()).format("MMMM Do YYYY, h:mm:ss a");
+        }
+        terminal(this, level, message);
+        hooks(this, level, message);
+    }
+    get levels() {
+        return this.#levels;
+    }
+    get colors() {
+        return this.#colors;
+    }
+}
+module.exports.LoggingManager = LoggingManager;
+
+
+
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    <a href="https://listify.games">Listify.games</a> generated documentation
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

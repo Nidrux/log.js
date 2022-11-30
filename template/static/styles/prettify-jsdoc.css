@@ -1,0 +1,95 @@
+/* JSDoc prettify.js theme */
+
+/* plain text */
+.str {
+  color: #b5bd68;
+}
+/* string content */
+
+.str {
+  color: #b5bd68;
+}
+
+/* keyword */
+
+.kwd {
+  color: #b294bb;
+}
+
+/* comment */
+
+.com {
+  color: #969896;
+}
+
+/* type name */
+
+.typ {
+  color: #81a2be;
+}
+
+/* literal value */
+
+.lit {
+  color: #de935f;
+}
+
+/* punctuation */
+
+.pun {
+  color: #c5c8c6;
+}
+
+/* lisp open bracket */
+
+.opn {
+  color: #c5c8c6;
+}
+
+/* lisp close bracket */
+
+.clo {
+  color: #c5c8c6;
+}
+
+/* markup tag name */
+
+.tag {
+  color: #cc6666;
+}
+
+/* markup attribute name */
+
+.atn {
+  color: #de935f;
+}
+
+/* markup attribute value */
+
+.atv {
+  color: #8abeb7;
+}
+
+/* declaration */
+
+.dec {
+  color: #de935f;
+}
+
+/* variable name */
+
+.var {
+  color: #cc6666;
+}
+
+/* function name */
+
+.fun {
+  color: #81a2be;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+}

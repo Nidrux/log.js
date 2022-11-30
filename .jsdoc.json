@@ -1,0 +1,26 @@
+{
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc"]
+  },
+  "source": {
+    "source": "",
+    "include": ["."],
+    "includePattern": ".(jsx|js|ts|tsx)$",
+    "exclude": ["node_modules","template", "docs"],
+    "excludePattern": "(node_modules/|docs)"
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": true,
+    "useLongnameInNav": false,
+    "showInheritedInNav": true
+  },
+  "opts": {
+    "template": "./template/",
+    "destination": "./docs/",
+    "encoding": "utf8",
+    "private": true,
+    "recurse": true
+  }
+}
