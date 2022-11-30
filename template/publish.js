@@ -356,13 +356,6 @@ function buildNav(members) {
   var nav = [];
   var seen = {};
   var seenTutorials = {};
-
-  nav.push(
-    buildNavLink(
-      "Listify",
-      '<a href="https://listify.games" width="100%" style="display: flex; justify-content: center;"><img src="https://i.imgur.com/iOcQUWe.png" width="30%" height="auto"></a>'
-    )
-  );
   nav = nav.concat(buildNavLink("home", '<a href="index.html">Home</a>'));
   nav = nav.concat(
     buildMemberNav(
