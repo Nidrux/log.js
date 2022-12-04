@@ -1,0 +1,4 @@
+- name: Changelog
+  uses: scottbrenner/generate-changelog-action@master
+  id: Changelog
+
