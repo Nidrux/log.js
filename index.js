@@ -1,9 +1,11 @@
 const moment = require("moment");
-const { hooks } = require("./controllers/hooks");
-const { terminal } = require("./controllers/terminal");
+const { hooks } = require("./handlers/hooks");
+const { terminal } = require("./handlers/terminal");
+const { formatLogMessage } = require("./modules/formatLogMessage");
 class LoggingManager {
     config;
-    dateFormat;
+    date;
+    stack;
     #colors = {
         red: "\u001b[31m",
         gold: "\u001b[33m",
@@ -35,10 +37,22 @@ class LoggingManager {
      */
     Log(level, message) {
         if(this.config.dateFormatting) {
-            this.dateFormat = moment(Date.now()).format(this.config.dateFormatting);
+            this.date = moment(Date.now()).format(this.config.dateFormatting);
         } else {
-            this.dateFormat = moment(Date.now()).format("MMMM Do YYYY, h:mm:ss a");
+            this.date = moment(Date.now()).format("MMMM Do YYYY, h:mm:ss a");
         }
+        if(this.config?.trace || message instanceof Error) {
+            if(message instanceof Error) {
+                this.stack = message.stack.split("at ")[1];;
+                console.log(this.stack)
+                message = JSON.stringify(message, Object.getOwnPropertyNames(message), null , 2)
+            } else {
+                this.stack = ((new Error().stack).split("at ")[2]);
+            }
+            let regexp = /[^\\]+:(\d*):(\d*)/g;
+            this.stack = this.stack.match(regexp)
+        }
+        message = formatLogMessage(this, level, message);
         terminal(this, level, message);
         hooks(this, level, message);
     }

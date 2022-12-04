@@ -1,7 +1,19 @@
+/**
+ * 
+ * @param {Array} array 
+ * @param {string} string 
+ * @returns {array} an array with events that are also defined as levels in the LoggingManager.
+ */
 function isAnEvent(array, string) {
     return array.filter(s => s.toLowerCase() === string.toLowerCase());
 }
 const fetch = require("node-fetch");
+/**
+ * 
+ * @param {LoggingManager} loggingManager 
+ * @param {string} level 
+ * @param {string} message 
+ */
 module.exports.hooks = (loggingManager, level, message) => {
     if(loggingManager.config?.webhooks) {
         if(loggingManager.config.webhooks?.hooks) {
