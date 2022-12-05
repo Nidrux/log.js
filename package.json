@@ -1,6 +1,6 @@
 {
   "name": "@nidrux/log.js",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "An advanced logger for your javascript projects. Webhook support",
   "main": "index.js",
   "scripts": {
