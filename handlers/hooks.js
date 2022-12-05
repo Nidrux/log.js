@@ -11,10 +11,9 @@ const fetch = require("node-fetch");
 /**
  * 
  * @param {LoggingManager} loggingManager 
- * @param {string} level 
  * @param {string} message 
  */
-module.exports.hooks = (loggingManager, level, message) => {
+module.exports.hooks = (loggingManager, message) => {
         if(loggingManager.config.webhooks?.hooks) {
             if(loggingManager.config.webhooks?.onEvents) { 
                 if(isAnEvent(loggingManager.config.webhooks.onEvents, level).length > 0) {
@@ -23,7 +22,7 @@ module.exports.hooks = (loggingManager, level, message) => {
                             {
                                 method: "POST",
                                 body: JSON.stringify({
-                                    content: `[${loggingManager.dateFormat}] ${this.stack} ${level} ${message}`,
+                                    content: `${message}`,
                                 }),
                                 headers: {"content-type": "application/json"}
                             }

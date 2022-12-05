@@ -53,9 +53,9 @@ class LoggingManager {
             this.stack = this.stack.match(regexp)
         }
         message = formatLogMessage(this, level, message);
-        terminal(this, level, message);
+        terminal(this, message);
         if(this.config?.webhooks) {
-            hooks(this, level, message);
+            hooks(this, message);
         }
     }
     get levels() {

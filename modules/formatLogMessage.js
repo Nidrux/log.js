@@ -4,6 +4,5 @@ module.exports.formatLogMessage = (LoggingManager,level, message) => {
         m = m + ` (${LoggingManager.stack})`
     }
     m = m + ` ${level} ${message}`
-
     return m
 }

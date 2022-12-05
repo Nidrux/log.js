@@ -1,10 +1,9 @@
 /**
  * 
  * @param {LoggingManager} LoggingManager 
- * @param {string} level 
  * @param {string} message 
  */
-module.exports.terminal = (LoggingManager, level, message) => {
+module.exports.terminal = (LoggingManager, message) => {
     if(LoggingManager.config?.enableColors) {
         switch(level.toUpperCase()) {
             case "WARN":
