@@ -54,7 +54,9 @@ class LoggingManager {
         }
         message = formatLogMessage(this, level, message);
         terminal(this, level, message);
-        hooks(this, level, message);
+        if(this.config?.webhooks) {
+            hooks(this, level, message);
+        }
     }
     get levels() {
         return this.#levels;
