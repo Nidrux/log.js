@@ -53,7 +53,7 @@ class LoggingManager {
             this.stack = this.stack.match(regexp)
         }
         message = formatLogMessage(this, level, message);
-        terminal(this, message);
+        terminal(this, message, level);
         if(this.config?.webhooks) {
             hooks(this, message);
         }
